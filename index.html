@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI-елементи: довідник для тестувальника</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sun"></div>
+    <div class="wrap">
+      <header class="hero">
+        <div class="kicker">Довідник UI-компонентів</div>
+        <h1>10 елементів інтерфейсу</h1>
+        <p class="lede">
+          Кожен блок нижче – робочий приклад елемента та коротке пояснення, для
+          чого він потрібен користувачу.
+        </p>
+      </header>
+
+      <section class="item">
+        <div class="num">01</div>
+        <div>
+          <h2>Radiobutton (радіокнопка / перемикач)</h2>
+          <p class="purpose">
+            Дозволяє вибрати рівно один варіант із групи взаємовиключних
+            значень. Якщо вибір не обмежений одним варіантом — це вже завдання
+            для checkbox.
+          </p>
+          <div class="demo">
+            <fieldset>
+              <legend>Спосіб доставки</legend>
+              <div class="row">
+                <input type="radio" name="delivery" id="d1" checked /><label
+                  for="d1"
+                  >Кур'єром</label
+                >
+              </div>
+              <div class="row">
+                <input type="radio" name="delivery" id="d2" /><label for="d2"
+                  >Самовивіз</label
+                >
+              </div>
+              <div class="row">
+                <input type="radio" name="delivery" id="d3" /><label for="d3"
+                  >Поштою</label
+                >
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">02</div>
+        <div>
+          <h2>Checkbox (прапорець)</h2>
+          <p class="purpose">
+            Дає можливість незалежно вмикати або вимикати кожен варіант — можна
+            не вибрати жодного, один або всі одразу.
+          </p>
+          <div class="demo">
+            <fieldset>
+              <legend>Додаткові опції замовлення</legend>
+              <div class="row">
+                <input type="checkbox" id="c1" checked /><label for="c1"
+                  >Подарункова упаковка</label
+                >
+              </div>
+              <div class="row">
+                <input type="checkbox" id="c2" /><label for="c2"
+                  >Повідомити SMS про статус</label
+                >
+              </div>
+              <div class="row">
+                <input type="checkbox" id="c3" /><label for="c3"
+                  >Підписатися на розсилку</label
+                >
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">03</div>
+        <div>
+          <h2>Text input (текстове поле введення)</h2>
+          <p class="purpose">
+            Приймає довільний текст, який вводить користувач: ім'я, email,
+            пошуковий запит тощо. Головні перевірки — межі довжини, формат і
+            поведінка на порожньому значенні.
+          </p>
+          <div class="demo">
+            <label class="field-label" for="ti">Електронна пошта</label><br />
+            <input type="text" id="ti" placeholder="name@example.com" />
+            <div class="hint">Поле приймає до 254 символів</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">04</div>
+        <div>
+          <h2>Tabs (вкладки)</h2>
+          <p class="purpose">
+            Перемикають видиму групу контенту в межах однієї сторінки, без
+            перезавантаження. Зручні, коли пов'язаних розділів кілька, а місця
+            на екрані мало.
+          </p>
+          <div class="demo">
+            <div class="tabs-bar">
+              <button class="tab-btn active" data-tab="t1">Опис</button>
+              <button class="tab-btn" data-tab="t2">Характеристики</button>
+              <button class="tab-btn" data-tab="t3">Відгуки</button>
+            </div>
+            <div class="tab-panel active" id="t1">
+              Тут відображається загальний опис товару чи розділу.
+            </div>
+            <div class="tab-panel" id="t2">
+              Тут — таблиця технічних характеристик.
+            </div>
+            <div class="tab-panel" id="t3">
+              Тут — список відгуків користувачів.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">05</div>
+        <div>
+          <h2>Button (кнопка)</h2>
+          <p class="purpose">
+            Запускає дію: надсилання форми, підтвердження, перехід у новий стан.
+            На відміну від посилання — не веде на інший URL сама по собі, а
+            виконує подію в інтерфейсі.
+          </p>
+          <div class="demo">
+            <button class="primary" id="btnDemo">Зберегти зміни</button>
+            <div class="btn-status" id="btnStatus"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">06</div>
+        <div>
+          <h2>Text label (текстова мітка)</h2>
+          <p class="purpose">
+            Статичний підпис, що пояснює призначення сусіднього елемента. Сама
+            мітка не інтерактивна, але грамотно прив'язана до поля — покращує
+            доступність (клік по мітці фокусує поле).
+          </p>
+          <div class="demo">
+            <div class="label-demo">
+              <span class="field-label">Пароль</span>
+              <input type="text" placeholder="мінімум 8 символів" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">07</div>
+        <div>
+          <h2>Link (посилання)</h2>
+          <p class="purpose">
+            Веде на іншу сторінку, розділ або зовнішній ресурс за URL. На
+            відміну від кнопки, основна дія посилання — навігація.
+          </p>
+          <div class="demo">
+            Детальніше про політику повернення товару читайте
+            <a
+              class="demo-link"
+              href="https://zoomquilt.org/"
+              target="_blank"
+              rel="noopener"
+              >за цим посиланням</a
+            >.
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">08</div>
+        <div>
+          <h2>Tooltip (спливаюча підказка)</h2>
+          <p class="purpose">
+            Показує коротку контекстну підказку при наведенні курсора або
+            фокусі, не займаючи постійно місце на екрані.
+          </p>
+          <div class="demo">
+            CVV-код
+            <span class="tooltip-wrap" tabindex="0">
+              <span class="tooltip-trigger">?</span>
+              <span class="tooltip-bubble">3 цифри на звороті картки</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">09</div>
+        <div>
+          <h2>Dropdown list (випадаючий список)</h2>
+          <p class="purpose">
+            Дає вибрати одне значення зі списку варіантів, приховуючи решту
+            опцій до розкриття — економить простір порівняно зі списком
+            radiobutton'ів.
+          </p>
+          <div class="demo">
+            <label class="field-label" for="sel">Країна</label><br /><br />
+            <select id="sel">
+              <option>Україна</option>
+              <option>Польща</option>
+              <option>Німеччина</option>
+              <option>Канада</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <div class="num">10</div>
+        <div>
+          <h2>Data grid (таблиця даних)</h2>
+          <p class="purpose">
+            Структуровано показує набір записів рядками та колонками, часто з
+            сортуванням і фільтрацією — типовий елемент для списків замовлень,
+            звітів, результатів тестів.
+          </p>
+          <div class="demo">
+            <div class="table-wrap">
+              <table id="grid">
+                <thead>
+                  <tr>
+                    <th data-key="id">ID</th>
+                    <th data-key="test">Тест-кейс</th>
+                    <th data-key="status">Статус</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>TC-001</td>
+                    <td>Логін з коректними даними</td>
+                    <td><span class="status pass">passed</span></td>
+                  </tr>
+                  <tr>
+                    <td>TC-002</td>
+                    <td>Логін з порожнім паролем</td>
+                    <td><span class="status pass">passed</span></td>
+                  </tr>
+                  <tr>
+                    <td>TC-003</td>
+                    <td>Валідація email при реєстрації</td>
+                    <td><span class="status fail">failed</span></td>
+                  </tr>
+                  <tr>
+                    <td>TC-004</td>
+                    <td>Додавання товару в кошик</td>
+                    <td><span class="status pass">passed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>© 2026 Бідюк Марія</footer>
+    </div>
+
+    <script>
+      //tabs
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".tab-btn")
+            .forEach((b) => b.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-panel")
+            .forEach((p) => p.classList.remove("active"));
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.tab).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
